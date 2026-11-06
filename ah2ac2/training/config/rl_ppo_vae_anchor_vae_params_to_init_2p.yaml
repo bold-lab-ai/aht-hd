@@ -1,0 +1,55 @@
+# Repro
+seed: 1
+
+network:
+  critic_features: 512
+
+# ---- VAE anchor (decoder + fixed latent z) ----
+anchor_decoder_params_path: "checkpoints/vae_masked_3/human_vae/latent_dim32/100k/epoch99_seed2_valacc0.832.safetensors"
+anchor_z_npy_path: "outputs/es_refine_test_3/es_final_Z_i001_SP=16.227_XPavg=5.570.npy"
+
+# VAE decoder architecture (also used as RL actor architecture)
+vae_decoder:
+  preprocessing_features: [1024]
+  lstm_features: [512]
+  postprocessing_features: [256]
+  dropout: 0.0
+  act_fn: gelu
+  action_dim: 21
+  latent_dim: 32
+
+# -------- KL budget controller (anchor KL) --------
+bc_policy_kl_weight: 0.0
+kl_target: 0.064
+kl_alpha: 0.075
+kl_max: 10.0
+
+# -------- PPO / IPPO training --------
+num_players: 2
+num_envs: 1024
+num_steps: 128
+total_timesteps: 10000000000
+update_epochs: 4
+num_minibatches: 4
+discount_factor: 0.99
+gae_lambda: 0.95
+clip_eps: 0.2
+ent_coef: 0.001
+vf_coef: 0.5
+max_grad_norm: 0.5
+
+# Optimizer
+lr_linear_schedule: true
+lr: 0.0005
+
+# -------- Evaluation --------
+num_test_envs: 512
+
+# -------- Logging --------
+wandb_mode: "disabled"
+wandb_name: "human-proxy"
+wandb_project: "ad-hoc-human"
+
+# -------- Checkpointing --------
+save_last_policy: true
+save_path: "checkpoints/test_proxies_3/es_final_Z_i001_SP=16.227_XPavg=5.570/"

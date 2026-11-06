@@ -1,0 +1,7 @@
+Public source repository: https://github.com/gfppoy/aht-hd.
+This is a focused source release, not the complete historical experiment environment.
+Original internal module names are retained. Workstation prefixes were made relative and W&B defaults disabled where present.
+CPU numerical/statistical checks are runnable without Hanabi data. GPU training and full-corpus reproduction require dependencies and authorized local artifacts.
+No replacement LICENSE has been assigned; see ATTRIBUTION.md for the licensing status.
+
+Cleanup: renamed model classes to VAE, modules/configs to vae_2p*, and PPO gamma configuration to discount_factor. Historical checkpoint wrapper keys remain supported. Fixed undefined optional PPCA-fit variables and updated deprecated JAX tree_map calls. Numerical prior helpers are isolated for CPU tests. Source files pass the configured Ruff lint/format checks; 16 CPU tests pass. GPU training has not been rerun.

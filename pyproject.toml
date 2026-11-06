@@ -1,0 +1,31 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "aht-human-demonstrations"
+version = "0.1.0"
+description = "Research code for Ad-Hoc Teamwork from Human Demonstrations"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = ["numpy", "scipy", "PyYAML"]
+
+[project.optional-dependencies]
+hanabi = ["jax", "jaxmarl", "flax", "chex", "optax", "distrax", "ml-collections", "hydra-core", "omegaconf", "safetensors", "wandb", "tqdm", "matplotlib", "scikit-learn", "flashbax==0.1.0", "pettingzoo", "huggingface_hub"]
+test = ["pytest", "ruff"]
+
+[tool.setuptools.packages.find]
+include = ["ah2ac2*"]
+
+[tool.setuptools.package-data]
+"ah2ac2.training" = ["config/*.yaml"]
+
+[tool.ruff]
+line-length = 99
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E4", "E7", "E9", "F", "I"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

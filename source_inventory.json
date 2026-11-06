@@ -1,0 +1,223 @@
+{
+  "source_commit": "fd43b45aadc0a749c07f4b2f90458de409b52dfc",
+  "source_worktree_had_uncommitted_research_code": true,
+  "files": [
+    {
+      "release_path": "ah2ac2/datasets/dataloader.py",
+      "source_path": "ah2ac2/datasets/dataloader.py",
+      "source_sha256": "7181e02697a06914d13fc2b94c23120bed85fbe3f125b3aaf00cc9e0d029f00b",
+      "release_sha256": "7b2699a9c2db0a8f6b28b3d085b1330fe803f9be84c5ed78babd4f53ee74242d"
+    },
+    {
+      "release_path": "ah2ac2/datasets/dataset.py",
+      "source_path": "ah2ac2/datasets/dataset.py",
+      "source_sha256": "095de1fdf23ba20e1dee94e60b43ed7b19e40ee17ace30bbda626b7fc8f6627a",
+      "release_sha256": "6189dc393729091bee57193254392fec4c1b98baa377ef938ec00d8250060a7f"
+    },
+    {
+      "release_path": "ah2ac2/nn/multi_layer_lstm.py",
+      "source_path": "ah2ac2/nn/multi_layer_lstm.py",
+      "source_sha256": "7804720a89daa3f02f730e1f2c9b865371af938df92a6beab0499d418809b56d",
+      "release_sha256": "3d1d4b062a6376b886b63af7ec6b7ab5f169a486de685cc3a6ed2207e3192049"
+    },
+    {
+      "release_path": "ah2ac2/tools/coverage_analyze.py",
+      "source_path": "ah2ac2/tools/coverage_analyze.py",
+      "source_sha256": "646123eae52d8cdfc9bb7e77dc3be8b679e0e9a845862b8c131f1a2249b872b0",
+      "release_sha256": "746c7dd1671f5d8cf644df57220a120baebad969de246f37198eafb192943c6d"
+    },
+    {
+      "release_path": "ah2ac2/tools/coverage_behaviour.py",
+      "source_path": "ah2ac2/tools/coverage_behaviour.py",
+      "source_sha256": "8720d34a848a6ba3e55ee0ad352ebefcf733b16f80961abcac93c93a26e7b523",
+      "release_sha256": "1d36eafb91c03b33f6aa1a2eb9f266f02332e7101760a54b4f4b08544f129275"
+    },
+    {
+      "release_path": "ah2ac2/tools/coverage_drop_dims.py",
+      "source_path": "ah2ac2/tools/coverage_drop_dims.py",
+      "source_sha256": "8dd8f4a396f5e0208c6d5cacb2ef276a4f7a1721a1e15cc665b47b7f341f0dc8",
+      "release_sha256": "d25a29b8f167dfca39e495fd1506845faac193e1442a6e746138edda91b36d69"
+    },
+    {
+      "release_path": "ah2ac2/tools/coverage_sensitivity.py",
+      "source_path": "ah2ac2/tools/coverage_sensitivity.py",
+      "source_sha256": "75025d48b9e3266eb88da0de0680e9a9d4588acd54a120385d4b273d3593ecf0",
+      "release_sha256": "1779ffecf7dd783746f9668ae6313778c93416ee63058a1c0f662cadf7c6c356"
+    },
+    {
+      "release_path": "ah2ac2/tools/crossplay_eval.py",
+      "source_path": "ah2ac2/tools/crossplay_eval.py",
+      "source_sha256": "085f571381b44a232fc6392aa612b5fd8e0b41dba02637819e304e186907976a",
+      "release_sha256": "58c1ca2becdec1ed25b07335cd49d3928d534d5db1bc1037104d1260ae1c311e"
+    },
+    {
+      "release_path": "ah2ac2/tools/encode_human_latents.py",
+      "source_path": "ah2ac2/tools/encode_human_latents.py",
+      "source_sha256": "ae57407cec250752fc139967e4c7c9093de5e488a08e022e620ad847a004409f",
+      "release_sha256": "bc1430183075b2c871d5ccc0781b6387ba44ef2a7a655562958e318dac5a3eaa"
+    },
+    {
+      "release_path": "ah2ac2/tools/eval_bc_on_val.py",
+      "source_path": "ah2ac2/tools/eval_bc_on_val.py",
+      "source_sha256": "e6acecb2faad4c2de38679c81a7e23f4b7925cda2bbdf23c71b16a35f9f7f7d9",
+      "release_sha256": "eeb87cb82797e36001bbe43d20c62e5bea7bccb0fb00ba50b08676dd0dfc44d0"
+    },
+    {
+      "release_path": "ah2ac2/tools/eval_ppo_on_val.py",
+      "source_path": "ah2ac2/tools/eval_ppo_on_val.py",
+      "source_sha256": "69695c22865b10b213010930d89edebcc9f92c3d4f982fa95366657c49c11182",
+      "release_sha256": "6505dfacfd88941ff8d25ad09d224d2cf92232075bb5160a971cb12f3a9cf4bf"
+    },
+    {
+      "release_path": "ah2ac2/tools/evaluate_kl_anchor_sweep.py",
+      "source_path": "ah2ac2/tools/evaluate_kl_anchor_sweep.py",
+      "source_sha256": "9163003745b06f756f6ae420e411a01ba5c3cbcfd6eef694de1e8b348b5b5f20",
+      "release_sha256": "4c72e403b7a6ab891b90578358119f779b336db9739162692c366cd31a1fb576"
+    },
+    {
+      "release_path": "ah2ac2/tools/experiment3_stats.py",
+      "source_path": "ah2ac2/tools/experiment3_stats.py",
+      "source_sha256": "121e3b344d5daa81a1be0f5cb4706ba9f0ea636002c5b484af5655dd4c7c69d9",
+      "release_sha256": "cdafe3c7fc0455800e37aea182ad5ec6d02e7c02107551e61bec6a06e59a159b"
+    },
+    {
+      "release_path": "ah2ac2/tools/fit_latent_prior.py",
+      "source_path": "ah2ac2/tools/fit_latent_prior.py",
+      "source_sha256": "b60f534d1e1db8996d3676f82a0721bb5eea335c6ce5c605d7c4c5948250e498",
+      "release_sha256": "077b44893335702893f7153b6732bee0ccfa184b15b760f343884fae12b1aa42"
+    },
+    {
+      "release_path": "ah2ac2/tools/hgroup_metrics.py",
+      "source_path": "ah2ac2/tools/hgroup_metrics.py",
+      "source_sha256": "c6eebae416db96e3075d69f382efe7f55ea3b8d600c82d6b2ce2ea34422a7b95",
+      "release_sha256": "c6eebae416db96e3075d69f382efe7f55ea3b8d600c82d6b2ce2ea34422a7b95"
+    },
+    {
+      "release_path": "ah2ac2/tools/hgroup_replay.py",
+      "source_path": "ah2ac2/tools/hgroup_replay.py",
+      "source_sha256": "03a875999536f8ada7bd3698023910a186ed74e87cb0d344300c45fea9b5af3f",
+      "release_sha256": "3137e73d80e0f4bd9be589f91f1abc2f392b1dfa3101313a9fbb7afc7004d06b"
+    },
+    {
+      "release_path": "ah2ac2/tools/hgroup_rollout.py",
+      "source_path": "ah2ac2/tools/hgroup_rollout.py",
+      "source_sha256": "1f0ef96cd5ddd4d5eb3d7e5c58c3b6174fba6eb92b4d6f2daf5babfd8d7e6534",
+      "release_sha256": "e37d3deb9cf30d5123fb1dc9ab59baad30f535459471738b40e22d88a4077779"
+    },
+    {
+      "release_path": "ah2ac2/tools/human_grounding_certificate.py",
+      "source_path": "ah2ac2/tools/human_grounding_certificate.py",
+      "source_sha256": "f00e31f0535b68009ebc2c7b2226ff3e724e88d1973f9fe2c99ddcf76faaeb42",
+      "release_sha256": "0218527869ff800363de0a1fedae9cf37190ee03bf92b6f02f7905e0c370f13a"
+    },
+    {
+      "release_path": "ah2ac2/tools/kl_eval.py",
+      "source_path": "ah2ac2/tools/kl_eval.py",
+      "source_sha256": "6051b2457d725d3e7091e7869e809f3a0885b0723edf5e89894097381d8d5167",
+      "release_sha256": "947dbee068a813f82cdf14f1ceb9216c14ecd896fa6c22bdf23df744a61260db"
+    },
+    {
+      "release_path": "ah2ac2/tools/latent_diagnostics.py",
+      "source_path": "ah2ac2/tools/latent_diagnostics.py",
+      "source_sha256": "76fcf973c6436f8d9f2484d65707e6db69afe20b04ef06fa90bd2e1ee51b31b6",
+      "release_sha256": "e355e475a7a1d7336da32bec1ee5a6190fac21d161058bbd7993d192d12af95b"
+    },
+    {
+      "release_path": "ah2ac2/tools/latent_es_refine.py",
+      "source_path": "ah2ac2/tools/latent_es_refine.py",
+      "source_sha256": "9a69e84a0e536a574d531f7c347f90c1fe0e751f86491477c5a72eb6571607d1",
+      "release_sha256": "d518d07c827f4b5c12233281129dd887678c0ef86f70501eee7963ab3c81731a"
+    },
+    {
+      "release_path": "ah2ac2/tools/latent_search_from_dataset.py",
+      "source_path": "ah2ac2/tools/latent_search_from_dataset.py",
+      "source_sha256": "410a7d741e0e4fc9c9d8dc631144b110fc610cd386ecb7469b48b4536a919420",
+      "release_sha256": "032360524ea4cfda2bca73421432fefae9c14a3da8e3820cf83d96777e49e9e9"
+    },
+    {
+      "release_path": "ah2ac2/tools/rollout_encode_pca.py",
+      "source_path": "ah2ac2/tools/rollout_encode_pca.py",
+      "source_sha256": "b28fe5c4cda7e62d9a0a1b1a090dd28129cbdc5ab69b6746c9766e5d586f758c",
+      "release_sha256": "a3fe570f80e028617dcbc34e734e79eada9239f9020ffe382bab55c1bc08e449"
+    },
+    {
+      "release_path": "ah2ac2/training/bc.py",
+      "source_path": "ah2ac2/training/bc.py",
+      "source_sha256": "73ff758c2e20b87146fbe3143685b858f26d7522924ae179d5f3f705137110e5",
+      "release_sha256": "7b612f07bc68726d3fedb788cdabb82abe7ae08c98b8e43796c61c0ddb10deff"
+    },
+    {
+      "release_path": "ah2ac2/training/br_bc_lstm.py",
+      "source_path": "ah2ac2/training/br_bc_lstm.py",
+      "source_sha256": "4dad3d485d85268eacd89659708fabca518a917073457d0684860ebaeb0382a4",
+      "release_sha256": "67ffaaba8fa390c31f9371aeb07aa2586c019f3a486dbbec8966b0412e1e17a8"
+    },
+    {
+      "release_path": "ah2ac2/training/br_latent_lstm.py",
+      "source_path": "ah2ac2/training/br_latent_lstm.py",
+      "source_sha256": "bd67177e093e71c05dab5ef4e3d4a51ddb1c7aa3b92654a78abfc9c8dc972b8e",
+      "release_sha256": "0d252f368b406b9cb91637232fad8024c481f65a0fef0382be67f8bbc3d679d9"
+    },
+    {
+      "release_path": "ah2ac2/training/br_rl_bc_lstm.py",
+      "source_path": "ah2ac2/training/br_rl_bc_lstm.py",
+      "source_sha256": "8d4a176ea4d6bf3e803ac2864d0983ced352271eb8c405587fb1b4a0eb1f2738",
+      "release_sha256": "ea6fc1ab3ae11e344d88457aad7834dbdf20735381f748ac10a02800191dfc5b"
+    },
+    {
+      "release_path": "ah2ac2/training/br_rl_vae_lstm.py",
+      "source_path": "ah2ac2/training/br_rl_vae_lstm.py",
+      "source_sha256": "aabfb6a92054a8583a5d01c1462a81db3e1f3f2fb8a07561423c026612bc0cdf",
+      "release_sha256": "ad1baaa6b70d0a59d00275ff97316baf9c670aed34dcc13a8f1973867ebd9695"
+    },
+    {
+      "release_path": "ah2ac2/training/vae_2p.py",
+      "source_path": "ah2ac2/training/gamma_2p.py",
+      "source_sha256": "afa1dda4e82e76a853fa9a044c45d72d380f609e505e2fbc773357f1e30266d8",
+      "release_sha256": "75ccddc4ef7dbc37637c85ebd5fd7a71ee2ba8e04461a0be47cd1e36ad85f27f"
+    },
+    {
+      "release_path": "ah2ac2/training/vae_2p_masked.py",
+      "source_path": "ah2ac2/training/gamma_2p_masked.py",
+      "source_sha256": "5676247dffe4ab3a50fc8a3bf0de9a81cd71b344605e11ef454f54fa36898605",
+      "release_sha256": "7f24c1e6adc5bfd312e69388e378da84904b0cfc0ec4c59c2feaa3fd5e7078b6"
+    },
+    {
+      "release_path": "ah2ac2/training/vae_2p_masked_mixture.py",
+      "source_path": "ah2ac2/training/gamma_2p_masked_mixture.py",
+      "source_sha256": "f9f288f0dc3e2fecf08a281c16cb5f8db2a0c342c3bad37cca6cced2a620715c",
+      "release_sha256": "4b16d34c627f80ba279b22589a94969bed92fc4e7edbaafccafade129afa5470"
+    },
+    {
+      "release_path": "ah2ac2/training/rl_ppo_bc_anchor.py",
+      "source_path": "ah2ac2/training/rl_ppo_bc_anchor.py",
+      "source_sha256": "973983db106960a7e511b988137e3ac680551536c66ea96673c8fe36cd1bb780",
+      "release_sha256": "d742ea727c3295f109e0b6f96ca68ea4bea48eb9c78e545de25679cb56be6287"
+    },
+    {
+      "release_path": "ah2ac2/training/rl_ppo_vae_anchor_vae_params_to_init.py",
+      "source_path": "ah2ac2/training/rl_ppo_vae_anchor_vae_params_to_init.py",
+      "source_sha256": "e3a8742ea99b8349fbd53f16a60d8302c8f12ee50796a0e3843057d6cefebc2a",
+      "release_sha256": "69c8136d1e13b7f9a8c9aa844507ff30487bc04fd7262696fa8a9c4ba9844c9f"
+    }
+  ],
+  "extracted_helpers": {
+    "ah2ac2/theory/signaling.py": "ah2ac2/tools/rebuttal_experiment6.py",
+    "ah2ac2/tools/calibration.py": "ah2ac2/tools/rebuttal_experiment5.py",
+    "ah2ac2/tools/prior_math.py": "ah2ac2/tools/fit_latent_prior.py"
+  },
+  "naming_changes": {
+    "model": "VAE",
+    "module_and_config_prefix": "vae_2p",
+    "ppo_discount_config_key": "discount_factor",
+    "legacy_checkpoint_wrapper_supported": true
+  },
+  "release_changes": [
+    "VAE naming for classes, modules, configs and documentation",
+    "discount_factor replaces PPO gamma setting",
+    "legacy serialized checkpoint wrappers remain readable",
+    "optional PPCA fit initialized before use",
+    "deprecated JAX tree_map replaced with tree_util.tree_map",
+    "unused imports removed and source consistently formatted"
+  ]
+}

@@ -1,0 +1,57 @@
+# config/vae_2p_mixture.yaml
+# --------------------------------------------------
+seed: 0
+batch_size: 128
+num_epochs: 100
+
+# Validation remains human (tracks human-likeness of representation)
+val_data_path: "ah2ac2/datasets/data/2_player_games_val.safetensors"
+
+# Two training datasets
+human_train_data_path: "ah2ac2/datasets/data/human_2k.safetensors"
+obl_train_data_path:   "ah2ac2/datasets/data/obl_data_BZA0_b/2_player_games.safetensors"
+
+# Mixture training
+mix_enabled: true
+warmup_epochs: 10          # Stage A: human-only anchoring
+human_frac: 0.0001         # Stage B: fixed mixed batches
+human_sampling: "cycle"    # "cycle" or "with_replacement"
+obl_sampling: "with_replacement"
+
+# Optional: if you want fixed steps per epoch (else inferred from human set + human_frac)
+# steps_per_epoch: 100
+
+# Model
+action_dim: 21
+latent_dim: 32
+preprocessing_features:  [1024]
+lstm_features:           [256]
+postprocessing_features: [128]
+dropout: 0.5
+act_fn: "gelu"
+
+# Optim & Schedules
+lr_initial: 5.0e-3
+lr_final:   1.0e-4
+weight_decay: 1.0e-4
+beta: 1.0
+clip_grad_norm: 1.0
+target_kl: 32.0
+beta_adapt_rate: 0.05
+
+# Encoder masking (same as before)
+belief_slot_dropout: 0.50
+p_hand_card: 0.10
+p_discards_colour: 0.10
+p_last_action_block: 0.70
+p_last_action_reveal_fields: 0.50
+p_last_action_card: 0.30
+p_board_feature: 0.00
+
+# Data augmentation / subsets
+should_augment_data: true
+limited_data_ratio: null
+limited_data_regime_games: null
+
+# Optional output
+save_path: "./checkpoints/vae_lowdim_masked_mixture/human_plus_obl_vae/latent_dim32/human_frac=0.025/"

@@ -1,0 +1,81 @@
+# Repro
+seed: 1
+
+network:
+  # set these to null if you don't have BC
+  weights_checkpoint_path: null
+  config_checkpoint_path: null
+  # provide the shapes explicitly if no BC config is loaded
+  preprocessing_features: [1024]
+  lstm_features: [512]
+  postprocessing_features: [256]
+  dropout: 0.0
+  act_fn: gelu
+  critic_features: 512
+
+# BC anchor
+# anchor_bc_params_path: "checkpoints/bc/obl_bc_BZA0_b/2k/epoch38_seed0_score8.190_2p.safetensors"
+# anchor_bc_params_path: "checkpoints/bc/op_bc_proudmusic_chpt1/1.25k/epoch49_seed0_score12.056_2p.safetensors"
+# anchor_bc_params_path: "checkpoints/bc/new_obl_L1/3k/epoch44_seed0_score5.675_2p.safetensors"
+# anchor_bc_params_path: "checkpoints/bc_mixture/human_plus_obl_bc/human_frac=0.1/epoch17_seed0_valacc0.543_2p.safetensors"
+anchor_bc_params_path: "checkpoints/bc/obl_bc_BZA0_b/5k/epoch38_seed0_score20.140_2p.safetensors"
+
+# generator
+# generator:
+#   type: ippo
+#   checkpoint_path: "ah2ac2/models/proud-music/op_ippo_ff/checkpoint_1.pkl"
+#   # type: obl
+#   # checkpoint_path: "ah2ac2/models/icml_OBL4/OFF_BELIEF1_SHUFFLE_COLOR0_LOAD1_BZA0_BELIEF_b.safetensors"
+
+# --- theory metrics evaluation (generator-sampled states) ---
+theory_eval_envs: 64            # small batch of parallel envs for cheap eval
+theory_eval_horizon: 32         # steps per eval call
+theory_gen_mode: sample         # or "greedy"
+
+# how often to run theory eval
+theory_eval_every: 10           # run every N PPO updates (set 0 to disable)
+
+# state-sampling mode
+theory_eval_mode: streaming     # "reset" (fresh envs every time) or "streaming"
+theory_eval_burnin: 40          # only used in reset-mode: steps to burn in before measuring
+
+# -------- KL budget controller (anchor KL) --------
+bc_policy_kl_weight: 0.0   # initial lambda
+kl_target: 0.2             # target
+kl_alpha: 0.075            # dual step size
+kl_max: 10.0               # hard cap
+
+# -------- PPO / IPPO training --------
+num_players: 2
+num_envs: 1024
+num_steps: 128               # rollout horizon per update
+total_timesteps: 10000000000 # 1e10
+update_epochs: 4
+num_minibatches: 4
+discount_factor: 0.99
+gae_lambda: 0.95
+clip_eps: 0.2
+ent_coef: 0.001
+vf_coef: 0.5
+max_grad_norm: 0.5
+
+# Optimizer
+lr_linear_schedule: true
+lr: 0.0005
+
+# -------- Evaluation --------
+num_test_envs: 512           # used by the greedy evaluator
+
+# -------- Logging --------
+wandb_mode: "disabled"       # "online" | "offline" | "disabled"
+wandb_name: "human-proxy"
+wandb_project: "ad-hoc-human"
+
+# -------- Checkpointing --------
+save_last_policy: true
+# save_path: "checkpoints/kl_anchored/obl_bc_BZA0_b_2k_8.190/kl_target0.67/"
+# save_path: "checkpoints/kl_anchored/op_bc_proudmusic_chpt1_1.25k_12.056/kl_target0.15/"
+# save_path: "checkpoints/kl_anchored/human_2k_0.404/kl_target0.30/"
+save_path: "checkpoints/bc_test_proxies/early_checkpoint/bc_proxy_1/"
+
+stop_score: 21.24

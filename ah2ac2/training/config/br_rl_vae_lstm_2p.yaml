@@ -1,0 +1,58 @@
+# br_rl_vae_lstm_2p.yaml
+lr: 5e-4
+num_envs: 1024
+num_steps: 128
+total_timesteps: 1e10
+fc_dim_size: 128
+gru_hidden_dim: 128
+update_epochs: 4
+num_minibatches: 4
+discount_factor: 0.99
+gae_lambda: 0.95
+clip_eps: 0.2
+ent_coef: 0.01
+vf_coef: 0.5
+max_grad_norm: 0.5
+activation: "relu"
+env_name: "hanabi"
+env_kwargs: {}
+anneal_lr: True
+seed: 0
+
+rl_vae_policies:
+  - params: "checkpoints/reconstructed_partners_2k_plus_obl/es_final_Z_i000_SP=10.773_XPavg=4.020/seed1_score23.742_klt0.0768_2p.safetensors"
+    z: "checkpoints/vae_lowdim_masked_mixture/human_plus_obl_vae/latent_dim32/human_frac=0.05/es_refine/es_final_Z_i000_SP=10.773_XPavg=4.020.npy"
+  - params: "checkpoints/reconstructed_partners_2k_plus_obl/es_final_Z_i001_SP=14.500_XPavg=3.384/seed1_score23.271_klt0.0678_2p.safetensors"
+    z: "checkpoints/vae_lowdim_masked_mixture/human_plus_obl_vae/latent_dim32/human_frac=0.05/es_refine/es_final_Z_i001_SP=14.500_XPavg=3.384.npy"
+  - params: "checkpoints/reconstructed_partners_2k_plus_obl/es_final_Z_i002_SP=12.094_XPavg=3.996/seed1_score24.061_klt0.0732_2p.safetensors"
+    z: "checkpoints/vae_lowdim_masked_mixture/human_plus_obl_vae/latent_dim32/human_frac=0.05/es_refine/es_final_Z_i002_SP=12.094_XPavg=3.996.npy"
+  - params: "checkpoints/reconstructed_partners_2k_plus_obl/es_final_Z_i003_SP=11.773_XPavg=2.087/seed1_score21.869_klt0.074_2p.safetensors"
+    z: "checkpoints/vae_lowdim_masked_mixture/human_plus_obl_vae/latent_dim32/human_frac=0.05/es_refine/es_final_Z_i003_SP=11.773_XPavg=2.087.npy"
+  - params: "checkpoints/reconstructed_partners_2k_plus_obl/es_final_Z_i004_SP=14.773_XPavg=3.658/seed1_score23.877_klt0.0673_2p.safetensors"
+    z: "checkpoints/vae_lowdim_masked_mixture/human_plus_obl_vae/latent_dim32/human_frac=0.05/es_refine/es_final_Z_i004_SP=14.773_XPavg=3.658.npy"
+  - params: "checkpoints/reconstructed_partners_2k_plus_obl/es_final_Z_i005_SP=12.484_XPavg=4.004/seed1_score21.123_klt0.0722388_2p.safetensors"
+    z: "checkpoints/vae_lowdim_masked_mixture/human_plus_obl_vae/latent_dim32/human_frac=0.05/es_refine/es_final_Z_i005_SP=12.484_XPavg=4.004.npy"
+  - params: "checkpoints/reconstructed_partners_2k_plus_obl/es_final_Z_i006_SP=13.055_XPavg=3.944/seed1_score20.871_klt0.0709_2p.safetensors"
+    z: "checkpoints/vae_lowdim_masked_mixture/human_plus_obl_vae/latent_dim32/human_frac=0.05/es_refine/es_final_Z_i006_SP=13.055_XPavg=3.944.npy"
+  - params: "checkpoints/reconstructed_partners_2k_plus_obl/es_final_Z_i007_SP=12.484_XPavg=2.714/seed1_score20.045_klt0.0722388_2p.safetensors"
+    z: "checkpoints/vae_lowdim_masked_mixture/human_plus_obl_vae/latent_dim32/human_frac=0.05/es_refine/es_final_Z_i007_SP=12.484_XPavg=2.714.npy"
+
+rl_vae_act_fn: "gelu"
+
+rl_vae_actor:
+  preprocessing_features: [1024]
+  lstm_features: [512]
+  postprocessing_features: [256]
+  dropout: 0.0
+
+# BR-BC Annealing
+anneal_horizon: 6e9
+anneal_start: 1e9
+
+# WandB Params
+wandb_mode: "disabled"       # "online" | "offline" | "disabled"
+wandb_name: "human-proxy"
+project: "ad-hoc-human"
+
+save_path: "checkpoints/br_rl_vae_lstm/2k_plus_obl/"
+num_players: 2

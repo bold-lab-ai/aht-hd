@@ -1,0 +1,46 @@
+lr: 5e-4
+num_envs: 1024
+num_steps: 128
+total_timesteps: 1e10
+fc_dim_size: 128
+gru_hidden_dim: 128
+update_epochs: 4
+num_minibatches: 4
+discount_factor: 0.99
+gae_lambda: 0.95
+clip_eps: 0.2
+ent_coef: 0.01
+vf_coef: 0.5
+max_grad_norm: 0.5
+activation: "relu"
+env_name: "hanabi"
+env_kwargs: {}
+anneal_lr: True
+seed: 0
+
+vae_decoder:
+  config_path: "checkpoints/vae_masked/human_vae/latent_dim32/100k/epoch98_seed0_valacc0.813.yaml"
+  critic_features: 1
+
+vae_ckpt_path: "checkpoints/vae_masked/human_vae/latent_dim32/100k/epoch98_seed0_valacc0.813.safetensors"
+latent_paths: 
+  - "checkpoints/vae_masked/human_vae/latent_dim32/100k/es_refine/es_final_Z_i000_SP=15.305_XPavg=4.600.npy"
+  - "checkpoints/vae_masked/human_vae/latent_dim32/100k/es_refine/es_final_Z_i001_SP=15.805_XPavg=4.772.npy"
+  - "checkpoints/vae_masked/human_vae/latent_dim32/100k/es_refine/es_final_Z_i002_SP=16.258_XPavg=5.176.npy"
+  - "checkpoints/vae_masked/human_vae/latent_dim32/100k/es_refine/es_final_Z_i003_SP=16.922_XPavg=5.333.npy"
+  - "checkpoints/vae_masked/human_vae/latent_dim32/100k/es_refine/es_final_Z_i004_SP=17.109_XPavg=3.924.npy"
+  - "checkpoints/vae_masked/human_vae/latent_dim32/100k/es_refine/es_final_Z_i005_SP=16.406_XPavg=4.652.npy"
+  - "checkpoints/vae_masked/human_vae/latent_dim32/100k/es_refine/es_final_Z_i006_SP=16.117_XPavg=3.172.npy"
+  - "checkpoints/vae_masked/human_vae/latent_dim32/100k/es_refine/es_final_Z_i007_SP=15.492_XPavg=4.754.npy"
+
+# BR-BC Annealing
+anneal_horizon: 6e9
+anneal_start: 1e9
+
+# WandB Params
+wandb_mode: "disabled"       # "online" | "offline" | "disabled"
+wandb_name: "human-proxy"
+project: "ad-hoc-human"
+
+save_path: "checkpoints/br_latent_lstm/human_vae/100k/"
+num_players: 2

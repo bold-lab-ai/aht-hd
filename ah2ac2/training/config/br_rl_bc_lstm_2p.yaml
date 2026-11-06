@@ -1,0 +1,35 @@
+# br_rl_bc_lstm_2p.yaml
+lr: 5e-4
+num_envs: 1024
+num_steps: 128
+total_timesteps: 1e10s
+fc_dim_size: 128
+gru_hidden_dim: 128
+update_epochs: 4
+num_minibatches: 4
+discount_factor: 0.99
+gae_lambda: 0.95
+clip_eps: 0.2
+ent_coef: 0.01
+vf_coef: 0.5
+max_grad_norm: 0.5
+activation: "relu"
+env_name: "hanabi"
+env_kwargs: {}
+anneal_lr: True
+seed: 0
+
+teacher_policy:
+  weights_path: "checkpoints/kl_anchored/human_plus_obl_valacc0.543/kl_target0.147/seed1_score24.572_klt0.147_2p.safetensors"
+  config_path:  "checkpoints/kl_anchored/human_plus_obl_valacc0.543/kl_target0.147/seed1_score24.572_klt0.147_2p.yaml"
+
+# BR-Teacher Annealing
+anneal_horizon: 6e9
+anneal_start: 1e9
+
+wandb_mode: "disabled"       # "online" | "offline" | "disabled"
+wandb_name: "human-proxy"
+project: "ad-hoc-human"
+
+save_path: "checkpoints/br_rl_bc_lstm/2k_plus_obl/"
+num_players: 2

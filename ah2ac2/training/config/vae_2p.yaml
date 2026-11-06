@@ -1,0 +1,41 @@
+# vae_2p.yaml --------------------------------------------------
+seed: 2
+batch_size: 128
+num_epochs: 100
+
+train_data_path: "ah2ac2/datasets/data/2_player_games_train.safetensors"
+val_data_path:   "ah2ac2/datasets/data/2_player_games_train_val1000.safetensors"
+
+# Model
+action_dim: 21
+latent_dim: 32
+preprocessing_features:  [1024]
+lstm_features:           [512]
+postprocessing_features: [256]
+dropout: 0.5
+act_fn: "gelu"
+
+# Optim & Schedules
+lr_initial: 5.0e-3 
+lr_final:   1.0e-4
+weight_decay: 1.0e-4
+beta: 1.0                 # final KL weight
+clip_grad_norm: 1.0
+target_kl: 32.0            # nats you want (≈1 nat / latent‑dim)
+beta_adapt_rate: 0.05      # how fast β reacts
+
+belief_slot_dropout: 0.50
+p_hand_card: 0.10
+p_discards_colour: 0.10
+p_last_action_block: 0.70
+p_last_action_reveal_fields: 0.50
+p_last_action_card: 0.30
+p_board_feature: 0.00
+
+# Data augmentation / subsets
+should_augment_data: true
+limited_data_ratio: null
+limited_data_regime_games: null
+
+# Optional output
+save_path: "./checkpoints/vae_masked_3/human_vae/latent_dim32/100k/"
