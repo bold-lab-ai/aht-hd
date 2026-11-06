@@ -1,4 +1,4 @@
-Public source repository: https://github.com/gfppoy/aht-hd.
+Public source repository: https://github.com/bold-lab-ai/aht-hd.
 This is a focused source release, not the complete historical experiment environment.
 Original internal module names are retained. Workstation prefixes were made relative and W&B defaults disabled where present.
 CPU numerical/statistical checks are runnable without Hanabi data. GPU training and full-corpus reproduction require dependencies and authorized local artifacts.

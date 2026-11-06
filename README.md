@@ -173,7 +173,7 @@ The latent suite is a complementary evaluation probe. This release does not esta
 
 [`source_inventory.json`](source_inventory.json) records the originating workspace commit and hashes of copied modules, including research files that were uncommitted in that workspace. Numerical signaling/calibration helpers were extracted from the original experiment implementations; training objectives were retained. The release cleanup initializes the optional PPCA mixture fit, updates deprecated JAX tree-map calls, removes unused imports and applies consistent formatting. Workstation path prefixes were made relative and W&B defaults disabled where configured.
 
-See [attribution and license status](ATTRIBUTION.md) before publication. Public repository: https://github.com/gfppoy/aht-hd.
+See [attribution and license status](ATTRIBUTION.md) before publication. Public repository: https://github.com/bold-lab-ai/aht-hd.
 
 ### Naming and checkpoint compatibility
 
